@@ -6,14 +6,17 @@ import Escudero from "./Escudero.js";
 import Card from "./Card-Components.js";
 import CardText from "./Card-text.js";
 import { joffrey } from "./got.js";
+import CardSubtext from "./card-subtext.js";
 
 const list = document.querySelector(".characters-list");
 const { nombre } = joffrey;
 const { familia } = joffrey;
-const imagenJoffrey = "img/jofrrey.jpg";
+const imagenJoffrey = "img/joffrey.jpg";
 
-const divCard = document.querySelector(".card-body-bod");
+const cardJeoffreyPersonaje = new Card(list, imagenJoffrey, nombre, familia);
 
-const cardPersonaje = new Card(list, imagenJoffrey, nombre, familia);
-/* export default cardPersonaje; */
-const CardPersonajeText = new CardText(divCard, joffrey, joffrey);
+const divCard = document.querySelector(".card-body");
+
+const CardJeoffreyText = new CardText(divCard, joffrey.nombre, joffrey.familia);
+
+const CardJeoffreyjeSubtext = new CardSubtext(joffrey, divCard);
