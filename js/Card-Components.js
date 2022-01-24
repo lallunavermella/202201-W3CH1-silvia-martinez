@@ -10,7 +10,7 @@ class Card {
               alt="${nombre} y ${familia}"
               class="character__picture card-img-top"
             />
-            <div class="card-body-bod">`;
+            <div class="card-body">`;
 
     parentElement.append(this.element);
   }

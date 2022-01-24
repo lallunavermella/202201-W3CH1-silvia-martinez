@@ -2,9 +2,8 @@ class CardText {
   element;
   constructor(parentElement, name, family) {
     this.element = document.createElement("h2");
-    this.element.className = "haracter__name card-title";
-    this.element.innerHTML = `${name} y ${family}
-              <div class="character__info">`;
+    this.element.className = "character__name card-title h4";
+    this.element.innerHTML = `${name}  ${family}`;
 
     parentElement.append(this.element);
   }
