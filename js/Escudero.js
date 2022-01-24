@@ -1,5 +1,5 @@
-import Personaje from "./personaje";
-import Luchador from "./luchador";
+import Personaje from "./Personaje.js";
+import Luchador from "./Luchador.js";
 
 class Escudero extends Personaje {
   sirveA;
@@ -26,7 +26,7 @@ class Escudero extends Personaje {
     if (gradoPelotismo > 10) {
       return 10;
     }
-    return gradoPelotismo;
+    return this.gradoPelotismo;
   }
 
   comunicar() {
