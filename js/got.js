@@ -1,7 +1,7 @@
-import Rey from "./Rey";
-import Luchador from "./Luchador";
-import Asesor from "./Asesor";
-import Escudero from "./Escudero";
+import Rey from "./Rey.js";
+import Luchador from "./Luchador.js";
+import Asesor from "./Asesor.js";
+import Escudero from "./Escudero.js";
 
 export const joffrey = new Rey("Joffrey", "Baratheon", 16, 2);
 export const jaime = new Luchador("Jaime", "Lannister", 45, "Espada", 7);
