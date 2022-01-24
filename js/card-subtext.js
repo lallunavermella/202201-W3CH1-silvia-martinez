@@ -15,6 +15,3 @@ class CardSubtext {
   }
 }
 export default CardSubtext;
-{
-  /* <div class="character__info">` */
-}
