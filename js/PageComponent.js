@@ -10,21 +10,11 @@ class PageComponent extends Components {
   generateHTML() {
     this.element.innerHTML = `<div class="app container">
       <ul class="characters-list row list-unstyled">
-              <div class="character__overlay">
-                <ul class="list-unstyled">
-                  <li>Años de reinado: X</li>
-                  <li>Arma: XXX</li>
-                  <li>Destreza: X</li>
-                  <li>Peloteo: X</li>
-                  <li>Asesora a: X</li>
-                  <li>Sirve a: X</li>
-                </ul>
+                </ul> 
                 <div class="character__actions">
                   <button class="character__action btn">habla</button>
                   <button class="character__action btn">muere</button>
                 </div>
-              </div>
-            </div>
             <i class="emoji"></i>
           </div> 
         </li>
