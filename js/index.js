@@ -3,48 +3,25 @@ import CardText from "./Card-text.js";
 import { joffrey, daenerys, bronn, jaime, tyrion } from "./got.js";
 import CardSubtext from "./card-subtext.js";
 
-const list = document.querySelector(".characters-list");
+const createCardCharacter = (character, image) => {
+  const list = document.querySelector(".characters-list");
+  const card = new Card(list, image, character.nombre, character.familia);
+  const CardCharacterText = new CardText(
+    card.body,
+    character.nombre,
+    character.familia
+  );
+  const CardCharacterSubtext = new CardSubtext(character, card.body);
+};
 
 const imagenJoffrey = "img/joffrey.jpg";
-
 const imagenDaenerys = "img/daenerys.jpg";
+const imagenTyrion = "img/tyrion.jpg";
+const imagenBronn = "img/bronn.jpg";
+const imagenJaime = "img/jaime.jpg";
 
-const cardJeoffreyPersonaje = new Card(
-  list,
-  imagenJoffrey,
-  joffrey.nombre,
-  joffrey.familia
-);
-
-const CardJeoffreyText = new CardText(
-  cardJeoffreyPersonaje.body,
-  joffrey.nombre,
-  joffrey.familia
-);
-const CardJeoffreyjeSubtext = new CardSubtext(
-  joffrey,
-  cardJeoffreyPersonaje.body
-);
-
-const cardDaenerysPersonaje = new Card(
-  list,
-  imagenDaenerys,
-  daenerys.nombre,
-  daenerys.familia
-);
-
-const CardDaenerysText = new CardText(
-  cardDaenerysPersonaje.body,
-  daenerys.nombre,
-  daenerys.familia
-);
-const CardDaenerysjeSubtext = new CardSubtext(
-  daenerys,
-  cardDaenerysPersonaje.body
-);
-
-/* const cardJeoffreyPersonaje = new Card(list, imagenJoffrey, nombre, familia);
-const divCard = document.querySelector(".card-body");
-const CardJeoffreyText = new CardText(divCard, joffrey.nombre, joffrey.familia);
-const CardJeoffreyjeSubtext = new CardSubtext(joffrey, divCard);
- */
+createCardCharacter(joffrey, imagenJoffrey);
+createCardCharacter(tyrion, imagenTyrion);
+createCardCharacter(bronn, imagenBronn);
+createCardCharacter(jaime, imagenJaime);
+createCardCharacter(daenerys, imagenDaenerys);
