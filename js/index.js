@@ -3,11 +3,16 @@ import CardText from "./Card-text.js";
 import { joffrey, daenerys, bronn, jaime, tyrion } from "./got.js";
 import CardSubtext from "./card-subtext.js";
 import PageComponent from "./PageComponent.js";
+import Overlay from "./Overlay.js";
+import Emoji from "./Emoji.js";
 
 new PageComponent(document.body, "div", "app");
 
 const createCardCharacter = (character) => {
   const list = document.querySelector(".characters-list");
+  const parentOverlay = document.querySelector(
+    ".characters-list row list-unstyled"
+  );
   const card = new Card(list, character.nombre, character.familia);
   console.log(character.nombre);
   const CardCharacterText = new CardText(
@@ -16,6 +21,17 @@ const createCardCharacter = (character) => {
     character.familia
   );
   const CardCharacterSubtext = new CardSubtext(character, card.body);
+  /* const cardOverlay = new Overlay(
+    parentOverlay,
+    character.nombre,
+    character.familia,
+    character.reinado,
+    character.arma,
+    character.destreza,
+    character.peloteo,
+    character.sirve
+  ); */
+  const emoji = new Emoji(character, card.body);
 };
 
 export const cardJeoffrey = createCardCharacter(joffrey);
