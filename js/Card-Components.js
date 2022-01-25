@@ -3,13 +3,13 @@ class Card {
   div;
   body;
 
-  constructor(parentElement, image, nombre, familia) {
+  constructor(parentElement, nombre, familia) {
     this.element = document.createElement("li");
-    this.element.className = "character col";
+    this.element.className = `character col ${nombre}`;
     this.div = document.createElement("div");
     this.div.className = "card character__card";
     this.div.innerHTML = `<img
-              src=${image}
+              src="./img/${nombre.toLowerCase()}.jpg"
               alt="${nombre} y ${familia}"
               class="character__picture card-img-top"/>
               </div>`;
@@ -17,7 +17,6 @@ class Card {
     this.body.className = "card-body";
 
     parentElement.append(this.element);
-
     this.element.append(this.div);
     this.div.append(this.body);
   }
