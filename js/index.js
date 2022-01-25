@@ -5,36 +5,36 @@ import CardSubtext from "./card-subtext.js";
 import PageComponent from "./PageComponent.js";
 import Overlay from "./Overlay.js";
 import Emoji from "./Emoji.js";
+import personajes from "./personajes.js";
 
 new PageComponent(document.body, "div", "app");
 
 const createCardCharacter = (character) => {
   const list = document.querySelector(".characters-list");
-  const parentOverlay = document.querySelector(
-    ".characters-list row list-unstyled"
-  );
+
   const card = new Card(list, character.nombre, character.familia);
   console.log(character.nombre);
+  console.log(personajes);
   const CardCharacterText = new CardText(
     card.body,
     character.nombre,
     character.familia
   );
   const CardCharacterSubtext = new CardSubtext(character, card.body);
-  /* const cardOverlay = new Overlay(
-    parentOverlay,
-    character.nombre,
-    character.familia,
-    character.reinado,
+  const cardBody = document.querySelectorAll(".card-body");
+  const cardOverlay = new Overlay(
+    cardBody[cardBody.length - 1],
+    character.anyosReinado,
     character.arma,
     character.destreza,
-    character.peloteo,
-    character.sirve
-  ); */
+    character.pelotismo,
+    character.asesorado,
+    character.sirveA
+  );
   const emoji = new Emoji(character, card.body);
 };
 
-export const cardJeoffrey = createCardCharacter(joffrey);
+createCardCharacter(joffrey);
 createCardCharacter(tyrion);
 createCardCharacter(bronn);
 createCardCharacter(jaime);
