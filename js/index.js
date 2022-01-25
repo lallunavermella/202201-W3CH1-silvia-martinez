@@ -2,10 +2,14 @@ import Card from "./Card-Components.js";
 import CardText from "./Card-text.js";
 import { joffrey, daenerys, bronn, jaime, tyrion } from "./got.js";
 import CardSubtext from "./card-subtext.js";
+import PageComponent from "./PageComponent.js";
 
-const createCardCharacter = (character, image) => {
+new PageComponent(document.body, "div", "app");
+
+const createCardCharacter = (character) => {
   const list = document.querySelector(".characters-list");
-  const card = new Card(list, image, character.nombre, character.familia);
+  const card = new Card(list, character.nombre, character.familia);
+  console.log(character.nombre);
   const CardCharacterText = new CardText(
     card.body,
     character.nombre,
@@ -14,14 +18,8 @@ const createCardCharacter = (character, image) => {
   const CardCharacterSubtext = new CardSubtext(character, card.body);
 };
 
-const imagenJoffrey = "img/joffrey.jpg";
-const imagenDaenerys = "img/daenerys.jpg";
-const imagenTyrion = "img/tyrion.jpg";
-const imagenBronn = "img/bronn.jpg";
-const imagenJaime = "img/jaime.jpg";
-
-createCardCharacter(joffrey, imagenJoffrey);
-createCardCharacter(tyrion, imagenTyrion);
-createCardCharacter(bronn, imagenBronn);
-createCardCharacter(jaime, imagenJaime);
-createCardCharacter(daenerys, imagenDaenerys);
+export const cardJeoffrey = createCardCharacter(joffrey);
+createCardCharacter(tyrion);
+createCardCharacter(bronn);
+createCardCharacter(jaime);
+createCardCharacter(daenerys);
